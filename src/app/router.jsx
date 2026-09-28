@@ -2,6 +2,11 @@ import HomePage from "../pages/HomePage/HomePage";
 import ContactPage from "../pages/ContactPage/ContactPaage";
 import AboutPage from "../pages/AboutPage/AboutPage";
 
+// products 
+import ProductsPage from "../pages/products/ProductsPage/ProductsPage";
+
+import NotFoundPage from "../pages/NotFound/NotFound";
+
 import PageLayout from "../components/layout/PageLayout/PageLayout";
 import { createBrowserRouter }  from "react-router-dom";
 
@@ -13,6 +18,12 @@ export const router = createBrowserRouter([
             {index: true, element: <HomePage />},
             {path: "contact", element: <ContactPage />},
             {path: "about", element: <AboutPage />},
+            {
+                path: "products", 
+                children: [
+                    {index: true, element: <ProductsListPage />},
+                ]
+            }
         ]
     }
 ]);
