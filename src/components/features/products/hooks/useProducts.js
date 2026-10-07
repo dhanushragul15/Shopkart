@@ -27,7 +27,7 @@ export function useProducts() {
                     const data = await getProducts();
 
                     if (active) {
-                        setProducts(data);
+                        setProducts(data.products);
                     }
                 }
                 // If product loading failed

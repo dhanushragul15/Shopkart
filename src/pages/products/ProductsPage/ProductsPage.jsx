@@ -1,25 +1,27 @@
-import { useProducts } from "../../../features/products/hooks/useProducts";
+import { useProducts } from "../../../components/features/products/hooks/useProducts";
 
-const ProductsPage = () => {
+const ProductPage = () => {
+
     const { products, loading, error } = useProducts();
-    
-    if(loading) {
-        return (
-            <div>
-                Product still Loading...
-            </div>
-        );
-    return (
-        <>
-        <div> Product Page </div>
-        <ul>
-            {
-                products.map((prod) => (
-                    <li key={prod.id}>{prod.title}
-            })
-        </ul>
-        </>
-    )
+
+     if (loading)
+      return (
+        <div>
+          Products still loading... 
+        </div>
+      );
+  return (
+    <>
+    <div> Products Page </div>
+    <ul>
+      {
+        products.map((prod) => {
+          <li key={prod.id}>{prod.title}</li>
+        })
+      }
+    </ul>
+    </>
+  );
 };
 
-export default ProductsPage;
+export default ProductPage;
