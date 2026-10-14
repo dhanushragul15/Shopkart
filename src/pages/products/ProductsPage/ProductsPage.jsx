@@ -1,4 +1,4 @@
-import { useProducts } from "../../../components/features/products/hooks/useProducts";
+import { useProducts } from "../../../features/products/hooks/useProducts";
 
 const ProductPage = () => {
 

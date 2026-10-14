@@ -1,30 +1,35 @@
 import HomePage from "../pages/HomePage/HomePage";
-import ContactPage from "../pages/ContactPage/ContactPaage";
+import ContactPage from "../pages/ContactPage/ContactPage";
 import AboutPage from "../pages/AboutPage/AboutPage";
 
-// products 
+// Products
 import ProductsPage from "../pages/products/ProductsPage/ProductsPage";
+import ProductDetailsPage from "../pages/products/ProductDetailsPage/ProductDetailsPage";
 
-import NotFoundPage from "../pages/NotFound/NotFound";
+import NotFound from "../pages/NotFound/NotFound";
 
 import PageLayout from "../components/layout/PageLayout/PageLayout";
-import { createBrowserRouter }  from "react-router-dom";
+
+import { createBrowserRouter } from "react-router-dom";
 
 export const router = createBrowserRouter([
     {
         path: "/",
         element: <PageLayout />,
         children: [
-            {index: true, element: <HomePage />},
-            {path: "contact", element: <ContactPage />},
-            {path: "about", element: <AboutPage />},
+            { index: true, element: <HomePage /> },
+            { path: "contact", element: <ContactPage /> },
+            { path: "about", element: <AboutPage /> },    
             {
-                path: "products", 
-                children: [
-                    {index: true, element: <ProductsPage />},
-                    {path: "id", element: <ProductDetailsPages />}
+                path: "products",
+                children: [ 
+                    { index: true, element: <ProductsPage />},
+                    { path: ":productId", element : <ProductDetailsPage /> }
+                    
                 ]
-            }
+            }       
         ]
-    }
+    },
+
+    { path: "*", element: <NotFound /> }
 ]);

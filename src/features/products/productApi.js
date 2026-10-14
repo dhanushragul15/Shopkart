@@ -5,7 +5,7 @@ import {
     getCategories,
 }
 
-from '../../../services/api/dummyJSON_API';
+from '../../services/api/dummyJSON_API';
 
 export {
     getProducts,
