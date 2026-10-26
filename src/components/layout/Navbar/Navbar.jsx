@@ -28,7 +28,7 @@ const Navbar = () => {
                         <li className="nav-item">
                             <NavLink className="nav-link" to="/products">
                                My Cart
-                               <span
+                               <span></span>
                             </NavLink>
                         </li>
                         <li className="nav-item dropdown">
